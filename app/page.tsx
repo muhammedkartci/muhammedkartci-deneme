@@ -1,5 +1,6 @@
 "use client"
 import { Calendar, Heart, Camera } from "lucide-react"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 
 function LiveTimer() {
@@ -58,84 +59,102 @@ function LiveTimer() {
     </div>
   )
 }
-
 function PhotoGallery() {
-  const photos = [
-    { id: 1, size: "large", src: "/images/mamis-irmik-(1).jpeg", alt: "Romantic sunset moment" },
-    { id: 2, size: "large", src: "/images/mamis-irmik-(6).jpeg", alt: "Happy together" },
-    { id: 3, size: "medium", src: "/images/mamis-irmik-(10).jpeg", alt: "Candlelight dinner" },
-    { id: 4, size: "small", src: "/images/mamis-irmik-(7).jpeg", alt: "Coffee date" },
-    { id: 5, size: "small", src: "/images/mamis-irmik-(2).jpeg", alt: "Laughing together" },
-    { id: 6, size: "small", src: "/images/mamis-irmik-(15).jpeg", alt: "Sweet moment" },
-    { id: 7, size: "medium", src: "/images/mamis-irmik-(3).jpeg", alt: "Garden walk" },
-    { id: 8, size: "large", src: "/images/mamis-irmik-(16).jpeg", alt: "Dancing together" },
-    { id: 9, size: "small", src: "/images/mamis-irmik-(8).jpeg", alt: "Beach sunset" },
-    { id: 10, size: "medium", src: "/images/mamis-irmik-(14).jpeg", alt: "Romantic picnic" },
-    { id: 11, size: "small", src: "/images/mamis-irmik-(18).jpeg", alt: "City walk" },
-    { id: 12, size: "large", src: "/images/mamis-irmik-(9).jpeg", alt: "Stargazing night" },
-    { id: 13, size: "medium", src: "/images/mamis-irmik-(4).jpeg", alt: "Cozy evening" },
-    { id: 14, size: "small", src: "/images/mamis-irmik-(13).jpeg", alt: "Adventure time" },
-    { id: 15, size: "small", src: "/images/mamis-irmik-(12).jpeg", alt: "Celebration" },
-    { id: 16, size: "medium", src: "/images/mamis-irmik-(5).jpeg", alt: "Travel memories" },
-    { id: 17, size: "small", src: "/images/mamis-irmik-(11).jpeg", alt: "Quiet moments" },
-    { id: 18, size: "large", src: "/images/mamis-irmik-(17).jpeg", alt: "Forever together" },
-  ]
-
-  const getSizeClasses = (size: string) => {
-    switch (size) {
-      case "large":
-        return "col-span-2 row-span-2 h-full"
-      case "medium":
-        return "col-span-1 row-span-2 h-full"
-      case "small":
-        return "col-span-1 row-span-1 h-full"
-      default:
-        return "col-span-1 row-span-1 h-full"
-    }
-  }
-
   return (
-    <div className="bg-pink-50/30 rounded-3xl p-8 md:p-12">
-      <div className="max-w-7xl mx-auto">
-        {/* Camera Icon */}
-        <div className="flex justify-center mb-4">
-          <Camera className="w-10 h-10 text-pink-600" strokeWidth={1.5} />
+    <div className="col">
+      <div className="row">
+        <div className="col" style={{ flex: 1.5 }}>
+          <div className="row">
+            <PhotoCard src="/images/mamis-irmik-(3).jpeg" alt="Memory" />
+          </div>
         </div>
+        <div className="col" style={{ flex: 2 }}>
+          <div className="row">
 
-        {/* Gallery Title */}
-        <h2 className="text-3xl md:text-4xl font-light text-center mb-6">
-          <span className="font-bold text-gray-700">Unutamayacağım </span>
-          <span className="font-bold text-pink-500">Anılarımız</span>
-        </h2>
-
-        {/* Gallery Description */}
-        <p className="text-center text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-          Her fotoğraf, bizim sevgimizin bir anını yansıtıyor. Seninle geçen her an, kalbime yeni bir anı daha yazıyor.
-        </p>
-
-        {/* Photo Grid - 18 Photos */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 auto-rows-min">
-          {photos.map((photo) => (
-            <div
-              key={photo.id}
-              className={`${getSizeClasses(photo.size)} overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-pink-200/50 cursor-pointer group relative`}
-            >
-              <img
-                src={photo.src || "/placeholder.svg"}
-                alt={photo.alt}
-                className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-500"
-              />
-              <div className="absolute inset-0 bg-pink-100/0 group-hover:bg-pink-100/10 transition-all duration-500 rounded-2xl"></div>
-
-              {/* Heart icon overlay on hover */}
-              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Heart className="w-6 h-6 text-white fill-pink-500 stroke-pink-500" />
-              </div>
+            <div className="col">
+              <PhotoCard src="/images/mamis-irmik-(16).jpeg" alt="Memory" />
             </div>
-          ))}
+          </div>
+          <div className="row">
+
+            <div className="col">
+              <PhotoCard src="/images/mamis-irmik-(2).jpeg" alt="Memory" />
+            </div>
+            <div className="col">
+              <PhotoCard src="/images/mamis-irmik-(1).jpeg" alt="Memory" />
+            </div>
+            <div className="col">
+              <PhotoCard src="/images/mamis-irmik-(5).jpeg" alt="Memory" />
+            </div>
+          </div>
+        </div>
+        <div className="col" style={{ flex: 1 }}>
+          <PhotoCard src="/images/mamis-irmik-(18).jpeg" alt="Memory" />
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col" style={{ flex: 1 }}>
+          <PhotoCard src="/images/mamis-irmik-(11).jpeg" alt="Memory" />
+        </div>
+        <div className="col" style={{ flex: 1 }}>
+          <PhotoCard src="/images/mamis-irmik-(13).jpeg" alt="Memory" />
+        </div>
+        <div className="col" style={{ flex: 1 }}>
+          <PhotoCard src="/images/mamis-irmik-(14).jpeg" alt="Memory" />
+        </div>
+        <div className="col" style={{ flex: 1 }}>
+          <PhotoCard src="/images/mamis-irmik-(15).jpeg" alt="Memory" />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col" style={{ flex: 1 }}>
+          <div className="row">
+            <div className="col">
+              <PhotoCard src="/images/mamis-irmik-(12).jpeg" alt="Memory" />
+            </div>
+            <div className="col">
+              <PhotoCard src="/images/mamis-irmik-(8).jpeg" alt="Memory" />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <PhotoCard src="/images/mamis-irmik-(9).jpeg" alt="Memory" />
+            </div>
+            <div className="col">
+              <PhotoCard src="/images/mamis-irmik-(10).jpeg" alt="Memory" />
+            </div>
+          </div>
+        </div>
+        <div className="col" style={{ flex: 2 }}>
+          <PhotoCard src="/images/mamis-irmik-(16).jpeg" alt="Memory" />
         </div>
       </div>
     </div>
+  )
+}
+
+function PhotoCard({ src, alt }: { src?: string, alt?: string }) {
+  return (
+    <div
+      className="group w-full h-full overflow-hidden border border-pink-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 rounded-xl bg-white"
+    >
+      <div className="p-0 w-full h-full ">
+        <div className="relative w-full h-full  overflow-hidden rounded-xl"
+
+        >
+          <Image
+            src={src || "/placeholder.svg"}
+            alt={alt || `Memory`}
+            width={300}
+            height={400}
+            className={"w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <Heart className="absolute top-4 right-4 w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
+      </div>
+    </div >
   )
 }
 
@@ -147,7 +166,7 @@ export default function RomanticPage() {
         <div className="text-center max-w-4x1 mx-auto">
           <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8">
             <span className="font-bold text-pink-500">Birbirimizin</span>{" "}
-            <span className="font-bold text-gray-700">olduğumuzdan <br/> bugüne kadar...</span>
+            <span className="font-bold text-gray-700">olduğumuzdan <br /> bugüne kadar...</span>
           </h1>
 
           {/* Heartfelt Paragraph */}
