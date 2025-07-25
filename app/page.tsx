@@ -63,7 +63,7 @@ function PhotoGallery() {
   const photos = [
     { id: 1, size: "large", src: "/images/mamis-irmik-(1).jpeg", alt: "Romantic sunset moment" },
     { id: 2, size: "large", src: "/images/mamis-irmik-(6).jpeg", alt: "Happy together" },
-    { id: 3, size: "medium", src: "/images/mamis-irmik-(17).jpeg", alt: "Candlelight dinner" },
+    { id: 3, size: "medium", src: "/images/mamis-irmik-(10).jpeg", alt: "Candlelight dinner" },
     { id: 4, size: "small", src: "/images/mamis-irmik-(7).jpeg", alt: "Coffee date" },
     { id: 5, size: "small", src: "/images/mamis-irmik-(2).jpeg", alt: "Laughing together" },
     { id: 6, size: "small", src: "/images/mamis-irmik-(15).jpeg", alt: "Sweet moment" },
@@ -78,19 +78,19 @@ function PhotoGallery() {
     { id: 15, size: "small", src: "/images/mamis-irmik-(12).jpeg", alt: "Celebration" },
     { id: 16, size: "medium", src: "/images/mamis-irmik-(5).jpeg", alt: "Travel memories" },
     { id: 17, size: "small", src: "/images/mamis-irmik-(11).jpeg", alt: "Quiet moments" },
-    { id: 18, size: "large", src: "/images/mamis-irmik-(10).jpeg", alt: "Forever together" },
+    { id: 18, size: "large", src: "/images/mamis-irmik-(17).jpeg", alt: "Forever together" },
   ]
 
   const getSizeClasses = (size: string) => {
     switch (size) {
       case "large":
-        return "col-span-2 row-span-2 h-64 md:h-80"
+        return "col-span-2 row-span-2 h-full"
       case "medium":
-        return "col-span-1 row-span-2 h-48 md:h-64"
+        return "col-span-1 row-span-2 h-full"
       case "small":
-        return "col-span-1 row-span-1 h-32 md:h-40"
+        return "col-span-1 row-span-1 h-full"
       default:
-        return "col-span-1 row-span-1 h-32"
+        return "col-span-1 row-span-1 h-full"
     }
   }
 
@@ -114,7 +114,7 @@ function PhotoGallery() {
         </p>
 
         {/* Photo Grid - 18 Photos */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-min">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 auto-rows-min">
           {photos.map((photo) => (
             <div
               key={photo.id}
@@ -147,7 +147,7 @@ export default function RomanticPage() {
         <div className="text-center max-w-4x1 mx-auto">
           <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8">
             <span className="font-bold text-pink-500">Birbirimizin</span>{" "}
-            <span className="font-bold text-gray-700">olduğumuzdan bugüne kadar...</span>
+            <span className="font-bold text-gray-700">olduğumuzdan <br/> bugüne kadar...</span>
           </h1>
 
           {/* Heartfelt Paragraph */}
